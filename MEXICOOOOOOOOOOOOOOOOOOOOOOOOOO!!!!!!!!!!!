@@ -6,6 +6,7 @@ screen = pygame.display.set_mode((1000, 1000))  # creates game screen
 screen.fill((100, 100, 100))
 clock = pygame.time.Clock() #set up clock
 
+MEXICO = pygame.mixer.Sound("MEXICO.mp3")
 img = pygame.image.load("MEXICO.png").convert()
 
 
@@ -45,14 +46,14 @@ for i in range(1000): #Amount
 
 while(1): #omg game lup---------
     clock.tick(60) #FPS
-    
+    pygame.mixer.Sound.play(MEXICO)  
     #physics section----
     
     #move flakes
     for i in range(len(flags)):
         flags[i].move()
          
-                      
+
 
     #render section---
     screen.fill((255, 255, 255))
